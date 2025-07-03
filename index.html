@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title> EC-Flow </title>
+
+  <link rel="icon" href="./static/images/logo.png">
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/leaderboard.css">
+  <link rel="stylesheet" href="./static/css/video-player.css">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <script type="text/javascript" src="static/js/sort-table.js" defer></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/explorer-index.js"></script>
+  <script src="./static/js/question_card.js"></script>
+
+  <script src="./static/js/leaderboard_testmini.js"></script>  
+  <script src="./data/results/output_folders.js" defer></script>
+  <script src="./data/results/model_scores.js" defer></script>
+
+  <script src="./visualizer/data/data_public.js" defer></script>
+
+  <style>
+    .no-sort {
+        cursor: default;
+        pointer-events: none;
+        background-image: none !important; /* Remove the sort arrow */
+    }
+
+    .title-bridgevla {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2em;
+      font-weight: 700;
+      background: linear-gradient(45deg, #2196F3, #4CAF50);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+      letter-spacing: 2px;
+      margin-bottom: 0.5em;
+      position: relative;
+      display: inline-block;
+      text-align: center;
+      padding-bottom: 0.2em;
+    }
+
+    .title-bridgevla::after {
+      content: '';
+      position: absolute;
+      bottom: -22px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(45deg, #2196F3, #4CAF50);
+      border-radius: 2px;
+    }
+
+    .title-bridgevla img {
+      width: 1.5em;
+      filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.2));
+    }
+  </style>
+
+</head>
+<body>
+
+  
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <p style="font-size:18px; display: inline; margin-right: -2px; margin-top: 12px;">🏠</p>
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://bridgevla.github.io/">
+            <b>BridgeVLA</b>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title is-bold">
+            <img src="static/images/logo.png" style="width:2em;vertical-align: middle" alt="Logo"/>
+            <span style="font-family: 'Comic Neue', cursive; font-weight: 700; font-size: 1em; vertical-align: middle; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">
+              EC-Flow
+            </span>
+            </h1>
+          <h2 class="subtitle is-3 publication-subtitle">
+            Enabling Versatile Robotic Manipulation from Action-Unlabeled Videos via Embodiment-Centric Flow
+          </h2>
+          
+          <h3 class="subtitle is-4 publication-subtitle"
+          style="font-weight: bold; margin-bottom: 20px; color: #b03030;">
+            ICCV 2025
+          </h3>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><a href="https://yixiang-chen.cn/" target="_blank" style="color: black;">Yixiang Chen</a><sup>1</sup><sup>,</sup><sup>2</sup></span>,
+            <span class="author-block"><a href="https://github.com/LPY1219" target="_blank" style="color: black;">Peiyan Li</a><sup>1</sup><sup>,</sup><sup>2</sup></span>,
+            <span class="author-block"><a href="https://scholar.google.com/citations?user=6nUJrQ0AAAAJ&hl=zh-CN" target="_blank" style="color: black;">Yan Huang</a><sup>1</sup><sup>,</sup><sup>2</sup><sup>,</sup><sup>3</sup><sup></sup>,</sup><sup>†</sup></span>,
+            <span class="author-block"><a href="https://jiabingyang01.github.io/" target="_blank" style="color: black;">Jiabing Yang</a><sup>1</sup><sup>,</sup><sup>2</sup></span>,
+            <span class="author-block"><a href="https://scholar.google.com/citations?hl=zh-CN&user=6esEV50AAAAJ" target="_blank" style="color: black;">Kehan Chen</a><sup>1</sup><sup>,</sup><sup>2</sup></span>,
+            <span class="author-block"><a href="https://scholar.google.com/citations?hl=zh-CN&user=8kzzUboAAAAJ" target="_blank" style="color: black;">Liang Wang</a><sup>1</sup><sup>,</sup><sup>2</sup><sup>,</sup><sup>†</sup></span>
+          </div>
+
+          <div class="is-size-5 publication-authors", style=" margin: 10px auto;", >
+            <span class="author-block"><sup>†</sup>Corresponding Author</span>
+          </div>
+  
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup><a href="http://cripac.ia.ac.cn/en/EN/volumn/home.shtml" target="_blank" style="color: black;">CASIA-NLPR</a>,</span>
+            <span class="author-block"><sup>2</sup><a href="https://ai.ucas.ac.cn/index.php/zh-cn/" target="_blank" style="color: black;">UCAS</a>,</span>
+            <span class="author-block"><sup>3</sup><a href="ec-flow1.github.io.github.io" target="_blank" style="color: black;">FiveAges</a></span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://ec-flow1.github.io/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://ec-flow1.github.io/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/YixiangChen515/EC-Flow"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <!-- <span class="link-block">
+                <a href="https://huggingface.co/datasets/AI4Math/MathVista"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <p style="font-size:18px">🤗</p>
+                  </span>
+                  <span>Dataset</span>
+                </a>
+              </span> -->
+              <!-- Twitter Link. -->
+              <!-- <span class="link-block">
+                <a href="https://twitter.com/lupantech/status/1717313355780964608"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <p style="font-size:18px">🌐</p>
+                  </span>
+                  <span>Twitter</span>
+                </a>
+              </span> -->
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TLDR Section -->
+<section class="section" style="padding-top: 1rem; padding-bottom: 1rem;">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <div class="tldr-box" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); 
+                                    border-left: 5px solid #4a90e2; 
+                                    padding: 20px; 
+                                    border-radius: 8px; 
+                                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+          <h2 class="title is-4" style="color: #2c3e50; margin-bottom: 10px;">TL;DR:</h2>
+          <p class="is-size-5" style="color: #34495e; line-height: 1.6;">
+            We propose a method for learning robot policies solely from action-unlabeled videos, enabling versatile manipulation of deformable objects, occluded scenes, and tasks without object displacement.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Video Section -->
+<!-- <div style="display: flex; justify-content: center; margin: 40px 0;">
+  <div style="width: 80%; max-width: 900px;">
+    <div style="box-shadow: 0 4px 16px rgba(0,0,0,0.08); border-radius: 12px; overflow: hidden; background: #fff;">
+      <iframe 
+        width="100%" 
+        height="506" 
+        src="https://www" 
+        title="Demo Video" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+</div> -->
+
+<!-- Abstract Section -->
+<section class="section">
+  <div class="container" style="margin-bottom: 2vh;">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Current language-guided robotic manipulation systems often require low-level action-labeled datasets for imitation learning. 
+            While object-centric flow prediction methods mitigate this issue, they remain limited to scenarios involving rigid objects with clear displacement and minimal occlusion.
+            In this work, we present <b>Embodiment-Centric Flow (EC-Flow)</b>, a framework that directly learns manipulation from action-unlabeled videos by predicting embodiment-centric flow.
+            Our key insight is that incorporating the embodiment's inherent kinematics significantly enhances generalization to versatile manipulation scenarios, including deformable object handling, occlusions, and non-object-displacement tasks.
+            To connect the EC-Flow with language instructions and object interactions, we further introduce a goal-alignment module by jointly optimizing movement consistency and goal-image prediction.
+            Moreover, translating EC-Flow to executable robot actions only requires a standard robot URDF (Unified Robot Description Format) file to specify kinematic constraints across joints, which makes it easy to use in practice.
+            We validate EC-Flow on both simulation (Meta-World) and real-world tasks, demonstrating its state-of-the-art performance in occluded object handling (<b>62%</b> improvement),
+            deformable object manipulation (<b>45%</b> improvement), and non-object-displacement tasks (<b>80%</b> improvement) than prior state-of-the-art object-centric flow methods.
+          </p>
+        </div>
+      </div>
+    </div>
+</div>
+</section>
+
+
+<!-- Teaser Section -->
+<!-- <section class="section" style="padding-top: 0;">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified">
+          <div class="box" style="margin-top: 0; margin-bottom: 1rem;">
+            <div class="content has-text-centered">
+              <img src="static/images/teaser.png" alt="grade-lv" width="100%" style="max-width: 1200px; height: auto;"/>
+              <p>Figure 1: Overview of BridgeVLA</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> 
+</section> -->
+
+<!-- METHOD SECTION -->
+<section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+  <h1 class="title is-1 mathvista_other">
+    <span class="mathvista_other" style="vertical-align: middle">Method</span>
+  </h1>
+  </div>
+</section>
+            
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified">
+          <p>The proposed <b>EC-Flow</b> overcomes key limitations of prior work through two modules:</p>
+          <ul style="margin-left: 1.5em;">
+            <li>
+              <b>Embodiment-Centric Flow Prediction:</b> Instead of tracking objects, we predict pixel-wise flow (i.e., future locations) for randomly sampled points of the embodiment;
+            </li>
+            <li>
+              <b>Kinematic-Aware Action Calculation:</b> Leveraging only the embodiment's URDF model and consecutive predicted EC-Flow, 
+              we compute executable actions without requiring action labels for supervision.
+            </li>
+          </ul>
+          
+          <h4 class="title is-5 mt-5 mb-3">Embodiment-Centric Flow Prediction</h4>
+          <p>
+            To predict embodiment-centric flow, we create a training dataset from RGB videos and build a flow prediction model. 
+            A key challenge is making sure the predicted motions align with both the robot's body and the task-relevant objects.
+            To solve this, we add an auxiliary goal image prediction task that helps ensure the motion follows kinematic rules and focuses on the right objects. See Figure 1 for an overview.
+          </p>
+
+          <div class="box" style="margin-top: 2rem; margin-bottom: 2rem;">
+            <div class="content has-text-centered">
+              <img src="static/images/network.png" alt="grade-lv" width="100%" style="max-width: 1200px; max-height: 600px;" />
+              <p class="has-text-left">
+                <strong>Figure 1: </strong>Embodiment-centric flow prediction network architecture.
+                <i>Branch (a)</i>: prediction of embodiment flow.
+                <i>Branch (b)</i>: prediction of the goal image which is used as an auxiliary task
+                for aligning flow to object interactions and language instruction.
+              </p>
+            </div>
+          </div>
+        
+          <h4 class="title is-5 mt-5 mb-3">Kinematic-Aware Action Calculation</h4>
+          <p>
+            Robots move with joints, not as one rigid piece. 
+            Our method handles this by first figuring out which joint each predicted motion belongs to (see Figure 2),
+            then calculating how the robot's hand should move. This process is described in Figure 3.
+          </p>
+
+          <div class="columns is-variable is-4" style="max-width: 1200px; margin: 2rem auto;">
+  
+            <!-- Left Column -->
+            <div class="column" style="display: flex; flex-direction: column;">
+              <div class="box" style="flex: 1;">
+                <div class="content has-text-centered">
+                  <img src="static/images/allocate_point.png" alt="Figure 2"
+                       style="width: 100%; height: auto;" />
+                  <p class="has-text-left" style="margin-top: 0.5rem;">
+                    <strong>Figure 2:</strong> Process of allocating sampled points to specific joints.  
+                    We only select points that only belong to a single joint.
+                  </p>
+                </div>
+              </div>
+            </div>
+          
+            <!-- Right Column -->
+            <div class="column" style="display: flex; flex-direction: column;">
+              <div class="box" style="flex: 1;">
+                <div class="content has-text-centered">
+                  <img src="static/images/algorithm.png" alt="Figure 3"
+                       style="width: 100%; height: auto;" />
+                  <p class="has-text-left" style="margin-top: 0.5rem;">
+                    <strong>Figure 3:</strong> Kinematic-aware action calculation algorithm.
+                  </p>
+                </div>
+              </div>
+            </div>
+          
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div> 
+</section>
+
+<!-- Simulation-->
+<section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+    <h1 class="title is-1 mathvista_other">Experiments</h1>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <div class="content">
+          <h2 class="title is-3 has-text-centered">Meta-World</h2>
+          <p class="has-text-justified">
+            We evaluate our method on 9 tasks from the Meta-World benchmark using a Sawyer robot.
+            Each task involves different object interactions, with randomized setups.
+            We collect 5 demo videos per task and test the learned policy 25 times per task.
+            The results are shown in Tab. 1.
+          </p>
+          <p>
+            <b>Notably, EC-Flow significantly outperforms baselines on challenging tasks like <i>btn-top-press</i>  and <i>hammer-strike</i>, thanks to its robustness to occlusions during manipulation.</b>
+          </p>
+          <div class="box" style="margin-top: 1rem; margin-bottom: 1rem;">
+            <div class="content has-text-centered">
+              <img src="static/images/Meta-World.png" alt="grade-lv" width="100%" style="max-width: 1200px; height: auto;"/>
+              <p>Table 1: Simulation results on Meta-World benchmark.</p>
+            </div>
+          </div>
+
+          <!-- RLBench Videos -->
+          <h3 class="title is-4 has-text-centered">Meta-World Task Demonstrations</h3>
+          
+          <!-- Row 1 -->
+          <div class="columns is-multiline">
+            <div class="column is-one-third">
+              <div class="box">
+                <video width="100%" controls>
+                  <source src="static/videos/Meta_World/door_open.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <p class="has-text-centered">Door Open</p>
+              </div>
+            </div>
+            <div class="column is-one-third">
+              <div class="box">
+                <video width="100%" controls>
+                  <source src="static/videos/Meta_World/door_close.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <p class="has-text-centered">Door Close</p>
+              </div>
+            </div>
+            <div class="column is-one-third">
+              <div class="box">
+                <video width="100%" controls>
+                  <source src="static/videos/Meta_World/shelf_place.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <p class="has-text-centered">Shelf Place</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Row 2 -->
+          <div class="columns is-multiline">
+            <div class="column is-one-third">
+              <div class="box">
+                <video width="100%" controls>
+                  <source src="static/videos/Meta_World/button_press.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <p class="has-text-centered">Button Press</p>
+              </div>
+            </div>
+            <div class="column is-one-third">
+              <div class="box">
+                <video width="100%" controls>
+                  <source src="static/videos/Meta_World/button_press_top.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <p class="has-text-centered">Button Press Top-Down</p>
+              </div>
+            </div>
+            <div class="column is-one-third">
+              <div class="box">
+                <video width="100%" controls>
+                  <source src="static/videos/Meta_World/faucet_close.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <p class="has-text-centered">Faucet Close</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Row 3 -->
+          <div class="columns is-multiline">
+            <div class="column is-one-third">
+              <div class="box">
+                <video width="100%" controls>
+                  <source src="static/videos/Meta_World/faucet_open.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <p class="has-text-centered">Faucet Open</p>
+              </div>
+            </div>
+            <div class="column is-one-third">
+              <div class="box">
+                <video width="100%" controls>
+                  <source src="static/videos/Meta_World/handle_press.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <p class="has-text-centered">Handle Press</p>
+              </div>
+            </div>
+            <div class="column is-one-third">
+              <div class="box">
+                <video width="100%" controls>
+                  <source src="static/videos/Meta_World/hammer.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <p class="has-text-centered">Hammer Strike</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Real-World Section -->
+          <h2 class="title is-3 has-text-centered">Real-World</h2>
+          <p class="has-text-justified">
+            We evaluate 7 tasks across rigid, deformable, and non-object movement categories, each trained on 5 action-free videos.
+            Each task is tested 10 times with randomized object positions.
+            The results are shown in Tab. 2.
+          </p>
+
+          <p>
+            <b>
+              EC-Flow uniquely enables successful manipulation of deformable objects and tasks 
+              without direct object displacement—scenarios previous object-centric flow methods failed to handle.
+            </b>
+          </p>
+          
+          <div class="box" style="margin-top: 1rem; margin-bottom: 1rem;">
+            <div class="content has-text-centered">
+              <img src="static/images/Real-World.png" alt="grade-lv" width="100%" style="max-width: 1200px; height: auto;"/>
+              <p>Table 2: Results on real-world manipulation tasks..</p>
+            </div>
+          </div>
+
+          <!-- Real-World Videos -->
+          <h3 class="title is-4 has-text-centered">Real-World Task Demonstrations</h3>
+          <p class="has-text-centered" style="font-weight: bold; font-size: 1.25rem;">Flow Prediction</p>
+          <!-- Row 1 -->
+          <div class="columns is-multiline">
+            <div class="column is-one-third">
+              <div class="box">
+                <video width="100%" controls>
+                  <source src="static/videos/Real-World/flows/fridge.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <p class="has-text-centered">Open Fridge</p>
+              </div>
+            </div>
+            <div class="column is-one-third">
+              <div class="box">
+                <video width="100%" controls>
+                  <source src="static/videos/Real-World/flows/drawer.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <p class="has-text-centered">Open Drawer</p>
+              </div>
+            </div>
+            <div class="column is-one-third">
+              <div class="box">
+                <video width="100%" controls>
+                  <source src="static/videos/Real-World/flows/oven.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <p class="has-text-centered">Open Oven</p>
+              </div>
+            </div>
+          </div>
+          
+          <p class="has-text-centered" style="font-weight: bold; font-size: 1.25rem;">Task Execution</p>
+          <!-- Row 2 -->
+          <div class="columns is-multiline">
+            <div class="column is-one-third">
+              <div class="box">
+                <video width="100%" controls>
+                  <source src="static/videos/Real-World/videos/fridge.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <p class="has-text-centered">Open Fridge</p>
+              </div>
+            </div>
+            <div class="column is-one-third">
+              <div class="box">
+                <video width="100%" controls>
+                  <source src="static/videos/Real-World/videos/drawer.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <p class="has-text-centered">Open Drawer</p>
+              </div>
+            </div>
+            <div class="column is-one-third">
+              <div class="box">
+                <video width="100%" controls>
+                  <source src="static/videos/Real-World/videos/oven.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <p class="has-text-centered">Open Oven</p>
+              </div>
+            </div>
+          </div>
+
+          <p class="has-text-centered" style="font-weight: bold; font-size: 1.25rem;">Flow Prediction</p>
+          <!-- Row 3 -->
+          <div class="columns is-multiline">
+            <div class="column is-one-third">
+              <div class="box">
+                <video width="100%" controls>
+                  <source src="static/videos/Real-World/flows/clothes.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <p class="has-text-centered">Fold Clothes</p>
+              </div>
+            </div>
+            <div class="column is-one-third">
+              <div class="box">
+                <video width="100%" controls>
+                  <source src="static/videos/Real-World/flows/towel.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <p class="has-text-centered">Fold Towel</p>
+              </div>
+            </div>
+            <div class="column is-one-third">
+              <div class="box">
+                <video width="100%" controls>
+                  <source src="static/videos/Real-World/flows/switch.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <p class="has-text-centered">Rotate Switch</p>
+              </div>
+            </div>
+          </div>
+          
+          <p class="has-text-centered" style="font-weight: bold; font-size: 1.25rem;">Task Execution</p>
+          <!-- Row 4 -->
+          <div class="columns is-multiline">
+            <div class="column is-one-third">
+              <div class="box">
+                <video width="100%" controls>
+                  <source src="static/videos/Real-World/videos/clothes.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <p class="has-text-centered">Fold Clothes</p>
+              </div>
+            </div>
+            <div class="column is-one-third">
+              <div class="box">
+                <video width="100%" controls>
+                  <source src="static/videos/Real-World/videos/towel.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <p class="has-text-centered">Fold Towel</p>
+              </div>
+            </div>
+            <div class="column is-one-third">
+              <div class="box">
+                <video width="100%" controls>
+                  <source src="static/videos/Real-World/videos/switch.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <p class="has-text-centered">Rotate Switch</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+</section>
+<section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+    <h1 class="title is-1 mathvista_other" id="citation">Citation</h1>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <div class="content">
+          <pre><code>
+            BibTex Code Here
+          </code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container" style="width: 60%;">
+  <style>
+      pre {
+        background-color: #f4f4f4;
+        padding: 5px; /* Adjust padding to 5px */
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        overflow-x: auto; /* Allow horizontal scrolling */
+    }
+    code {
+        font-family: Consolas, "Courier New", monospace;
+        color: #d63384; /* Code text color */
+    }
+  </style>
+
+
+  </div>
+</section>
+
+
+<footer class="footer">
+  <!-- <div class="container"> -->
+    <div class="content has-text-centered">
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content has-text-centered">
+          <div class="content">
+            <p>
+              This website is website adapted from <a href="https://bridgevla.github.io/">BridgeVLA</a> and <a href="https://nerfies.github.io/">Nerfies</a>, licensed under a <a rel="license"
+                                                  href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+              Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  <!-- </div> -->
+</footer>
+
+</body>
+</html>
+
